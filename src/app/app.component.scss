@@ -49,8 +49,22 @@
 
 .form {
   margin-top: 30px;
+
+  &.change-room-form {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
   h3 {
     text-align: center;
+  }
+
+  label {
+    text-align: center;
+    width: 100%;
   }
 
   input {
@@ -66,15 +80,6 @@
     margin: 0 auto;
     display: block;
     margin-top: 25px;
-    border: none;
-    width: 160px;
-    height: 55px;
-    background: rgb(81, 216, 216);
-    color: #fff;
-    border-radius: 12px;
     cursor: pointer;
-    font-weight: bold;
-    letter-spacing: 1.2px;
-    font-size: 16px;
   }
 }

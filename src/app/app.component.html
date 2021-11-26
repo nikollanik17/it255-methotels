@@ -13,14 +13,49 @@
       <div class="rooms__list-head__title">Number</div>
       <div class="rooms__list-head__title">Size</div>
       <div class="rooms__list-head__title">Price</div>
+      <div class="rooms__list-head__title">Actions</div>
     </div>
     <app-hotel-room
       *ngFor="let hotelRoom of hotelRooms | filterPipe: searchText; index as i"
       [hotelRoom]="hotelRoom"
+      (roomToDelete)="deleteRoom($event)"
+      (updateRoom)="setUpdateFormValues($event)"
     >
     </app-hotel-room>
   </div>
   <button (click)="shuffleRooms()" class="shuffle-btn">Shuffle</button>
+
+  <div class="form change-room-form">
+    <h3 class="ui header">Update room<span id="room-number"></span></h3>
+    <input type="hidden" id="numberToChange" #updateNumber />
+    <div class="field">
+      <label>Size</label>
+      <input
+        name="size"
+        type="number"
+        placeholder="Room size"
+        id="update-size"
+        #updateSize
+      />
+    </div>
+
+    <div class="field">
+      <label>Price</label>
+      <input
+        name="price"
+        type="number"
+        placeholder="Room price"
+        id="update-price"
+        #updatePrice
+      />
+    </div>
+    <button
+      (click)="updateRoomHandler(updateNumber, updateSize, updatePrice)"
+      class="btn btn-warning"
+    >
+      Update
+    </button>
+  </div>
 
   <div class="form">
     <h3 class="ui header">Add new room</h3>
@@ -51,6 +86,11 @@
         #newPrice
       />
     </div>
-    <button (click)="addRoom(newNumber, newSize, newPrice)">Submit</button>
+    <button
+      class="btn btn-primary"
+      (click)="addRoom(newNumber, newSize, newPrice)"
+    >
+      Submit
+    </button>
   </div>
 </div>
