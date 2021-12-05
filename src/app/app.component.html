@@ -57,7 +57,9 @@
     </button>
   </div>
 
-  <div class="form">
+  <app-add-room (roomToAdd)="addRoom($event)"></app-add-room>
+
+  <!-- <div class="form">
     <h3 class="ui header">Add new room</h3>
     <div class="field">
       <input
@@ -92,5 +94,5 @@
     >
       Submit
     </button>
-  </div>
+  </div> -->
 </div>
