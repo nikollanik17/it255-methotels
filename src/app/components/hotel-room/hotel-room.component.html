@@ -2,6 +2,26 @@
   <div class="hotel-room__item">{{ hotelRoom.number }}</div>
   <div class="hotel-room__item">{{ hotelRoom.size }}m2</div>
   <div class="hotel-room__item">{{ hotelRoom.price }}$</div>
-  <button class="btn btn-danger" (click)="deleteRoom()">Delete</button>
-  <button class="btn btn-warning" (click)="changeRoom()">Edit</button>
+  <div class="buttons">
+    <button class="btn btn-danger" (click)="deleteRoom()">Delete</button>
+    <button class="btn btn-warning" (click)="changeRoom()">Edit</button>
+    <button class="btn btn-success" (click)="openCalculator()">
+      Calculate
+    </button>
+  </div>
+</div>
+
+<div class="price-calculator calc-{{ hotelRoom.number }}">
+  <label>Enter number of nights: </label>
+  <input
+    type="number"
+    id="numberOfNights"
+    name="numberOfNights"
+    #numberOfNights
+  />
+  <button type="submit" (click)="getPrice(numberOfNights)">Submit</button>
+
+  <p>Price is: <span class="calculated-price"></span></p>
+
+  <button class="btn btn-warning" (click)="closeCalculator()">Close</button>
 </div>

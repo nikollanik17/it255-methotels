@@ -1,6 +1,6 @@
 .hotel-room {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 12px;
@@ -13,7 +13,24 @@
     padding: 6px 0;
   }
 
-  button {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    button {
+      display: block;
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.price-calculator {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  label {
     margin-right: 10px;
   }
 }

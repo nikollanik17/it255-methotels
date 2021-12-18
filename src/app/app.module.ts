@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HotelRoomComponent } from './components/hotel-room/hotel-room.component';
 import { FilterPipePipe } from './helpers/filter-pipe.pipe';
 import { AddRoomComponent } from './components/add-room/add-room.component';
+import { RoomService } from './services/room.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AddRoomComponent } from './components/add-room/add-room.component';
     AddRoomComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  providers: [RoomService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
