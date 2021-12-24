@@ -17,7 +17,7 @@ export class AddRoomComponent implements OnInit {
   public roomForm: FormGroup;
   @Output() roomToAdd: EventEmitter<HotelRoom>;
 
-  number: AbstractControl;
+  // number: AbstractControl;
 
   constructor() {
     this.roomToAdd = new EventEmitter();
